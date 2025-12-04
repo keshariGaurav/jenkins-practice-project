@@ -1,8 +1,19 @@
 pipeline {
-  agent any
+    agent any
 
-  post {
-    success { echo "Pipeline succeeded" }
-    failure { echo "Pipeline failed" }
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World from Jenkins!"
+            }
+        }
+    }
+    post {
+    success {
+      echo "Build & tests succeeded"
+    }
+    failure {
+      echo "Build or tests failed"
+    }
   }
 }
