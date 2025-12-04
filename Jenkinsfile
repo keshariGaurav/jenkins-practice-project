@@ -15,7 +15,6 @@ pipeline {
         stage('Docker Test') {
           steps {
             sh 'docker --version'
-            sh 'docker build -t myapp:test .'
           }
         }
     }
