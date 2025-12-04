@@ -12,12 +12,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/keshariGaurav/jenkins-practice-project'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build("kesharigaurav97/jenkinsapp:latest")
-                }
-            }
+        stage('Docker Test') {
+          steps {
+            sh 'docker --version'
+            sh 'docker build -t myapp:test .'
+          }
         }
     }
     post {
